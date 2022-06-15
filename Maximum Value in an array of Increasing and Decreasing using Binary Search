@@ -7,6 +7,15 @@ Input: array[] = {3, 5,15, 50, 11, 10, 8, 6}
 Answer: 50
 Hint: Think of using Binary Search
 
+1. find mid
+2. check if mid greater than both left and right element
+   if it is print.
+3.since ascending array property
+  left side will be either greater or less than middle element.
+4.since we have to find greatest go in direction where elements are bigger than middle.
+
+ 
+
 ------------------------------------------------
 #include <bits/stdc++.h> 
 using namespace std; 
