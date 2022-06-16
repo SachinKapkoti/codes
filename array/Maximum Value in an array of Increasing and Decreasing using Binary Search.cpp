@@ -1,0 +1,76 @@
+///Maximum Value in an array of Increasing and Decreasing using Binary Search
+One array of integers is given as an input ,which is initially increasing and then decreasing or it can be only increasing or decreasing , you need to find the maximum value in the array in O(Log n) Time complexity and O(1) Space Complexity Asked in: Amazon, Microsoft, Uber
+
+Example:
+
+Input: array[] = {3, 5,15, 50, 11, 10, 8, 6}
+Answer: 50
+Hint: Think of using Binary Search
+
+1. find mid
+2. check if mid greater than both left and right element
+   if it is print.
+3.since ascending array property
+  left side will be either greater or less than middle element.
+4.since we have to find greatest go in direction where elements are bigger than middle.
+
+ 
+
+------------------------------------------------
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+int findMaximumValue(int arr[], int low, int high)  
+{  
+    
+    if(low==high)// ifonly one element is there
+    {
+        return arr[low];
+    }
+    if((high==low+1) && (arr[low]>=arr[high])) //we divide n divide in the end 2 elements will be left
+    {  
+        return arr[low];
+    }
+    
+    int mid=(low+high)/2;
+    
+   if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])// if mid is bigger than both side elements
+   return arr[mid];
+   
+   
+   if(arr[mid]>arr[mid+1] &&arr[mid]<arr[mid-1])
+      {
+         return findMaximumValue(arr,low,mid-1);
+         
+      }
+    else
+      {
+    return findMaximumValue(arr,mid+1,high);
+       }
+   
+  
+    return 0;
+}  
+  
+
+int main()  
+{  
+    int arr[] = {8, 10, 20, 80, 100, 200, 400, 500, 3, 2, 1};  
+    int n = sizeof(arr)/sizeof(arr[0]);  
+    cout << "The maximum Value  is " << findMaximumValue(arr, 0, n-1);  
+    return 0;  
+} 
+
+/* Try more Inputs
+case 1: 
+actual = findMaximum(,0,10)
+expected = 500
+
+case2: 
+ actual = findMaximum([10, 20, 30, 40, 50],0,4)
+ expected = 50
+ 
+case3: 
+actual = findMaximum([120, 100, 80, 20, 0],0,4)
+expected = 120
+*/
