@@ -14,7 +14,7 @@ void display(int *array, int size) {
 void merge(int *array, int l, int m, int r) {
    //Practise Yourself : Write your code Here
    int i,j,k,el,er;
-   el=m-l+1;
+   el=m-l+1;        //1234 mid =2, for ,for loop we need i<m+1
    er=r-m;
    
    //left and right subarray
