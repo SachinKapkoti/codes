@@ -27,7 +27,7 @@ int findMaximumValue(int arr[], int low, int high)
     {
         return arr[low];
     }
-    if((high==low+1) && (arr[low]>=arr[high])) //we divide n divide in the end 2 elements will be left
+    if((high==low+1) && (arr[low]>=arr[high])) \
     {  
         return arr[low];
     }
