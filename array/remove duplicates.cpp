@@ -13,7 +13,7 @@ class Solution {
           nums[l]=nums[r]     ;   //we put new found element inplace
           
       }
-      return l+1;
+      return l+1;      //index starts with zero
    
    }
 };
