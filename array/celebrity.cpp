@@ -25,6 +25,7 @@ int findCelebrity(int n)
     for(int i=0;i<n;i++)
     {if(i!=celeb)
       if(MATRIX[i][celeb]==0 || MATRIX[celeb][i]==1)
+      //col                       //row
       return -1;
       
         
