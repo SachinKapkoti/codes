@@ -1,0 +1,52 @@
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if(list1==NULL)
+            return list2;
+        if(list2==NULL)
+            return list1;
+        
+        //initializse head pointer
+        ListNode* ptr=list1;
+        //setting lower value as head
+        if(list1->val > list2->val)
+        {
+            ptr=list2;
+            list2=list2->next;
+        }
+        else
+        {
+        list1=list1->next;
+        }
+        ListNode* curr=ptr;
+        
+        while(list1 && list2)
+        {//inserting next smaller element
+            if(list1->val < list2->val)
+            {
+                curr->next=list1;
+                list1=list1->next;
+               
+            }
+            else
+            {  curr->next=list2;
+                list2=list2->next;
+            }
+             curr=curr->next;
+             }
+        //if any one of LL gets exhausted enter 
+        //remaining ele of other LL in it
+        if(!list1)
+        {
+            curr->next=list2;
+        }
+        if(!list2)
+        { 
+            curr->next=list1;
+        }
+        return ptr;
+        
+        
+        
+    }
+};
