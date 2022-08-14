@@ -25,7 +25,8 @@ public:
         }
         
     }
-    
+    //min heap(on right) contains ele that are greater than median
+    //
     double findMedian() {
         if(g.size()==s.size())
             
