@@ -27,7 +27,8 @@ public:
     }
     //min heap(on right) contains ele that are greater than median
     //since max heap size is greater
-    //it contain median required when size is not equal
+    //it contain middle element(median) required when size
+    //is odd or size of heaps is not equal
     double findMedian() {
         if(g.size()==s.size())
             
