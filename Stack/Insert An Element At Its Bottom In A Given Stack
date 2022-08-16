@@ -1,0 +1,32 @@
+///
+We are  given 'MY_STACK = [4,3,2] and 'X’ = 8.
+We insert ‘X’ at the bottom of ‘MY_STACK’. 
+So finally, we have 'MY_STACK' = [8, 4, 3, 2]. 
+
+Test Case 2:
+After inserting an element at its bottom, the stack will be 5 6 2 4 
+///
+
+void solve(stack<int>& s, int x)
+{
+    //base
+     if(s.empty())
+     {
+         s.push(x);
+          return;
+     }
+    
+    int num=s.top();
+    s.pop();
+    
+    solve(s,x);
+    s.push(num);
+}
+
+
+stack<int> pushAtBottom(stack<int>& myStack, int x) 
+{
+    solve(myStack,x);
+    return myStack;
+    
+}
