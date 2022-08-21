@@ -25,16 +25,17 @@ public:
         }
     }
     
-    void pop() {
+  void pop() {
         if(s.empty())
         {return; }
         
         long t=s.top();
         if(t<min)
         {
-            min=2ll*min-t;
+            min=2ll*min-t; //find new element because original min is popped here
         }
-        s.pop();
+        s.pop(); //pop does not pops original ele
+                // but it does not matter 
     }
     
     int top() {
